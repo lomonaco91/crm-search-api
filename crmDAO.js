@@ -5,7 +5,6 @@ var db = require('./connection');
 module.exports = {
     
     //GETDOCTORS - Busca os médicos filtrando por crm
-
     getDoctors: function (params, cb) {
         var query = 'select * from medico';
         if (params.crm) {
