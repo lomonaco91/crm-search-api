@@ -27,7 +27,7 @@ module.exports = {
 
     updateDoctors: function (request, response, next) {
         var doctor = request.body;
-        crmDAO.updateDoctor(doctor, function (err) {
+        crmDAO.updateDoctors(doctor, function (err) {
             if (err) {
                 response.status(500).json(err);
             } else {

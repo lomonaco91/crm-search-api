@@ -19,7 +19,7 @@ module.exports = {
         db.getConnection().query(query, cb);
     },
 
-    updateDoctor: function (doctor, cb) {
+    updateDoctors: function (doctor, cb) {
         // construir a query
         var query = 'update from set..... where crm = ' +doctor.crm;
         db.getConnection().query(query, cb);

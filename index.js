@@ -11,6 +11,7 @@ db.testConnection(function (err) {
     }
 });
 
+
 function initServer() {
     var server = restify.createServer();
 
