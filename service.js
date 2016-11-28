@@ -19,7 +19,7 @@ module.exports = {
             if (err) {
                 response.status(500).json(err);
             } else {
-                response.status(200);
+                response.send(200);
             }
             next();
         });
@@ -39,11 +39,11 @@ module.exports = {
 
     deleteDoctor: function (request, response, next) {
         if (request.params.crm) {
-            crm.DAO.deleteDoctor(params.crm, function (err, rows) {
+            crmDAO.deleteDoctor(request.params.crm, function (err, rows) {
                 if (err) {
-                    response.status(501);
+                    response.send(500);
                 } else {
-                    response.status(200);
+                    response.send(200);
                 }
                 next();
             });

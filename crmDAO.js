@@ -14,20 +14,21 @@ module.exports = {
     },
 
     createDoctor: function (doctor, cb) {
-        // construir a query
-        var query = '';
+        var query = 'insert into medico (`nome`, `crm`, `estado`, `especialidade`)' +
+            'values (\'' + doctor.nome + '\', \'' + doctor.crm + '\', \'' + doctor.estado +
+            '\', \'' + doctor.especialidade + '\')';
         db.getConnection().query(query, cb);
     },
 
     updateDoctors: function (doctor, cb) {
         // construir a query
-        var query = 'update from set..... where crm = ' +doctor.crm;
+        var query = 'update from set..... where crm = ' + doctor.crm;
         db.getConnection().query(query, cb);
     },
 
     deleteDoctor: function (crm, cb) {
         // construir a query
-        var query = 'delete from medico where crm = ' + crm;
+        var query = 'delete from medico where crm like ' + crm;
         db.getConnection().query(query, cb);
     }
 

@@ -9,7 +9,6 @@ var connection = mysql.createConnection({
 
 //Conexão com o banco
 
-
 module.exports = {
     testConnection: function (cb) {
         connection.connect(function (err) {
