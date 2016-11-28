@@ -13,9 +13,10 @@ module.exports = {
         });
     },
 
-    createDoctor: function (request, response, next) {
+    saveDoctor: function (request, response, next) {
         var doctor = request.body;
-        crmDAO.createDoctor(doctor, function (err) {
+        crmDAO.saveDoctor(doctor, function (err) {
+            console.log(err);
             if (err) {
                 response.status(500).json(err);
             } else {

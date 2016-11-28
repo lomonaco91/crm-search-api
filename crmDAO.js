@@ -13,10 +13,12 @@ module.exports = {
         db.getConnection().query(query, cb);
     },
 
-    createDoctor: function (doctor, cb) {
+    saveDoctor: function (doctor, cb) {
         var query = 'insert into medico (`nome`, `crm`, `estado`, `especialidade`)' +
             'values (\'' + doctor.nome + '\', \'' + doctor.crm + '\', \'' + doctor.estado +
-            '\', \'' + doctor.especialidade + '\')';
+            '\', \'' + doctor.especialidade + '\') on duplicate key update ' +
+            'nome = \'' + doctor.nome + '\', estado = \'' + doctor.estado + '\', ' +
+            'especialidade = \'' + doctor.especialidade + '\'';
         db.getConnection().query(query, cb);
     },
 
