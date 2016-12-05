@@ -1,3 +1,4 @@
+//Variáveis e constantes para a criação da API, utilização de RESTIFY
 var restify = require('restify');
 var db = require('./connection');
 var router = require('./router');
@@ -11,6 +12,7 @@ db.testConnection(function (err) {
     }
 });
 
+//Inicia o servidor
 function initServer() {
     var server = restify.createServer();
 
@@ -23,6 +25,7 @@ function initServer() {
     });
 }
 
+//Função para adicionar o MIDLLEWARES necessários
 function addMiddlewares(server) {
     server.use(restify.CORS()); //Libera acesso de outros servidores;
     server.use(restify.jsonp()); //Para utilização do JSON

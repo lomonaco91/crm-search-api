@@ -1,3 +1,4 @@
+//Variáveis e definição das rotas
 var service = require('./service');
 
 module.exports = function (server) {

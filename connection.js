@@ -1,5 +1,6 @@
 var mysql = require('mysql');
 
+//Dados para a conexão com o banco de dados MYSQL
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -7,8 +8,7 @@ var connection = mysql.createConnection({
     database: 'crmdatabase'
 });
 
-//Conexão com o banco
-
+//Teste de conexão com o banco, antes de subir o servidor
 module.exports = {
     testConnection: function (cb) {
         connection.connect(function (err) {

@@ -1,7 +1,5 @@
 var db = require('./connection');
 
-//Exportando o DAO de médicos
-
 module.exports = {
 
     //GETDOCTORS - Busca os médicos filtrando por crm
@@ -12,7 +10,8 @@ module.exports = {
         }
         db.getConnection().query(query, cb);
     },
-
+    
+    //Método para salvar o médico, se CRM único (executa insert), se CRM duplicado (executa update)
     saveDoctor: function (doctor, cb) {
         var query = 'insert into medico (`nome`, `crm`, `estado`, `especialidade`)' +
             'values (\'' + doctor.nome + '\', \'' + doctor.crm + '\', \'' + doctor.estado +
@@ -23,13 +22,12 @@ module.exports = {
     },
 
     updateDoctors: function (doctor, cb) {
-        // construir a query
         var query = 'update from set..... where crm = ' + doctor.crm;
         db.getConnection().query(query, cb);
     },
 
+    //Deleta um médico a partir do seu CRM (já que o CRM é uma PK no banco)
     deleteDoctor: function (crm, cb) {
-        // construir a query
         var query = 'delete from medico where crm like ' + crm;
         db.getConnection().query(query, cb);
     }
