@@ -2,10 +2,11 @@ var mysql = require('mysql');
 
 //Dados para a conexão com o banco de dados MYSQL
 var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'fabiano123',
-    database: 'crmdatabase'
+    host: process.env.DB_HOST,
+    user:  process.env.DB_USER,
+    password :  process.env.DB_PASSWORD,
+    port :  process.env.DB_PORT,
+    database:process.env.DB_DATABASE
 });
 
 //Teste de conexão com o banco, antes de subir o servidor
