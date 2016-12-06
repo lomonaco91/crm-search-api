@@ -30,7 +30,7 @@ function init() {
             especialidade: specializationInput().val()
         };
         jQuery.ajax({
-            url: 'http://192.168.49.21:8080/doctors',
+            url: 'http://crm-search-crm-search.44fs.preview.openshiftapps.com/doctors',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(doctor),

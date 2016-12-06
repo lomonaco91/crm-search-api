@@ -18,7 +18,8 @@
   "homepage": "https://github.com/lomonaco91/crm-search-api#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "mysql": "^2.12.0",
-    "restify": "^4.2.0"
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "mysql": "^2.12.0"
   }
 }

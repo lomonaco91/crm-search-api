@@ -1,6 +1,6 @@
 (function init() {
 
-    jQuery.ajax('http://192.168.49.21:8080/doctors').done(function (response) {
+    jQuery.ajax('http://crm-search-crm-search.44fs.preview.openshiftapps.com/doctors').done(function (response) {
         var dataArray = createDataArray(response);
         google.charts.load('current', { 'packages': ['bar'] });
         google.charts.setOnLoadCallback(drawChart);

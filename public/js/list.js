@@ -3,7 +3,7 @@ init();
 function searchDoctorsByCrm() {
     var crm = jQuery('#crmNumber').val();
     if (checkValidCrm(crm)) {
-        jQuery.ajax('http://192.168.49.21:8080/doctors?crm=' + crm).done(function(response) {
+        jQuery.ajax('http://crm-search-crm-search.44fs.preview.openshiftapps.com/doctors?crm=' + crm).done(function(response) {
             var tableBody = document.getElementById('doctors-body');
             tableBody.innerHTML = '';
             response.forEach(doctor => {
@@ -27,7 +27,7 @@ function searchDoctorsByCrm() {
                 tdDelete.onclick = function() {
                     if (confirm('Tem certeza que deseja remover ' + doctor.nome + '?')) {
                         jQuery.ajax({
-                            url: 'http://192.168.49.21:8080/doctors?crm=' + doctor.crm,
+                            url: 'http://crm-search-crm-search.44fs.preview.openshiftapps.com/doctors?crm=' + doctor.crm,
                             type: 'DELETE',
                             statusCode: {
                                 500: function() {
