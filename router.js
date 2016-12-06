@@ -5,5 +5,5 @@ module.exports = function (server) {
     server.get('/doctors', service.getDoctors);
     server.post('/doctors', service.saveDoctor);
     server.put('/doctors', service.updateDoctors);
-    server.del('/doctors', service.deleteDoctor);
+    server.delete('/doctors', service.deleteDoctor);
 }
