@@ -1,0 +1,38 @@
+*{
+    font-family: "Helvetica";    
+}
+h1 {
+    font-weight: bold;
+}
+
+body {
+    background-color: white;
+}
+
+#center{
+    width: 500px;
+    margin: 0 auto;
+}
+
+.center-medical{
+    width: 300px;
+    height: 400px;
+    margin: auto;
+}
+
+#imgpos { 
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    margin-top: 80px
+}
+
+.center-chart{
+    width: 1000px;
+    height: 440px;
+    margin: auto;
+    margin-top: 10px;
+}
+.aboutus{
+    font-family: cursive;
+}

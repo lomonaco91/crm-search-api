@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CRM-Search</title>
+
+    <!-- Link Google Fonts -->
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:600' type="text/css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="page-header">
+         <h1>CRM-Search<small><br/>Search and register your CRM - It's free!</small></h1>
+    </div>
+
+    <!-- Navigation bar -->
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="index.html">Start</a></li>
+        <li role="presentation"><a href="register.html">Register</a></li>
+        <li role="presentation"><a href="chart.html">Report</a></li>
+        <li role="presentation"><a href="aboutus.html">About Us</a></li>
+    </ul>
+
+    <!-- Formulário de Cadastro -->
+    <div class="container" id="center">
+        <form id="formRegistration" class="form-horizontal">
+            <!-- Código CRM -->
+            <div class="form-group">
+                <input type="text" id="txtID" class="form-control" required="required" placeholder="Código CRM">
+            </div>
+            <!-- Nome do Médico -->
+            <div class="form-group">
+                <input type="text" id="txtName" class="form-control" required="required" placeholder="Nome do Médico">
+            </div>
+            <!-- Estado em que atua -->
+            <div class="form-group" id="select">
+                <select class="form-control" name="states">                    
+                    <option>Acre</option>	 
+                    <option>Alagoas</option>	 
+                    <option>Amapá</option> 
+                    <option>Amazonas</option>	 
+                    <option>Bahia</option>
+                    <option>Ceará</option>
+                    <option>Distrito Federal</option>	 
+                    <option>Espírito Santo</option>
+                    <option>Goiás</option>
+                    <option>Maranhão</option>	 
+                    <option>Mato Grosso</option>
+                    <option>Mato Grosso do Sul</option>	 
+                    <option>Minas Gerais</option>
+                    <option>Pará</option>
+                    <option>Paraíba</option>
+                    <option>Paraná</option>
+                    <option>Pernambuco</option>	 
+                    <option>Piauí</option>
+                    <option>Rio de Janeiro</option>	 
+                    <option>Rio Grande do Norte</option>	 
+                    <option>Rio Grande do Sul</option>
+                    <option>Rondônia</option>
+                    <option>Roraima</option>
+                    <option>Santa Catarina</option>	 
+                    <option>São Paulo</option>
+                    <option>Sergipe</option>
+                    <option>Tocantins</option>
+                </select>
+            </div>
+            <!-- Especialidade como médico -->
+            <div class="form-group">
+                <input type="text" id="txtSpecialization" class="form-control" required="required" placeholder="Especialidade">
+            </div>
+
+            <!-- Botões -->
+            <div class="form-group">
+                <div class="btn btn-success">
+                    <input type="submit" value="Salvar" id="btnAdd" class="btn btn-success" />
+                </div>
+                <div class="btn btn-danger">
+                    <input type="reset" value="Limpar" id="clearBtn" class="btn btn-danger" />
+                </div>
+            </div>
+
+            <div id="alert-registration" class="alert alert-success hide">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Success!</strong>New register saved!
+            </div>
+
+        </form>
+    </div>
+
+    <script src="js/save.js"></script>
+</body>
+
+</html>
