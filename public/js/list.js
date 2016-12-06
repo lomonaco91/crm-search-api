@@ -3,7 +3,7 @@ init();
 function searchDoctorsByCrm() {
     var crm = jQuery('#crmNumber').val();
     if (checkValidCrm(crm)) {
-        jQuery.ajax('./doctors?crm=' + crm).done(function(response) {
+        jQuery.ajax('/doctors?crm=' + crm).done(function(response) {
             var tableBody = document.getElementById('doctors-body');
             tableBody.innerHTML = '';
             response.forEach(doctor => {
@@ -27,7 +27,7 @@ function searchDoctorsByCrm() {
                 tdDelete.onclick = function() {
                     if (confirm('Tem certeza que deseja remover ' + doctor.nome + '?')) {
                         jQuery.ajax({
-                            url: './doctors?crm=' + doctor.crm,
+                            url: '/doctors?crm=' + doctor.crm,
                             type: 'DELETE',
                             statusCode: {
                                 500: function() {

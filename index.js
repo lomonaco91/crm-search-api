@@ -5,15 +5,6 @@ var router = require('./router');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 
-//Testando a conexão com o banco, antes de subir o servidor
-/*db.testConnection(function (err) {
-    if (err) {
-        console.log('MySQL connection failed.');
-    } else {
-        initServer();
-    }
-});*/
-
 initServer();
 
 //Inicia o servidor

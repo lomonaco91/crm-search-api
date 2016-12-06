@@ -30,7 +30,7 @@ function init() {
             especialidade: specializationInput().val()
         };
         jQuery.ajax({
-            url: './doctors',
+            url: '/doctors',
             type: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(doctor),

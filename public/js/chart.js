@@ -1,6 +1,6 @@
 (function init() {
 
-    jQuery.ajax('./doctors').done(function (response) {
+    jQuery.ajax('/doctors').done(function (response) {
         var dataArray = createDataArray(response);
         google.charts.load('current', { 'packages': ['bar'] });
         google.charts.setOnLoadCallback(drawChart);
