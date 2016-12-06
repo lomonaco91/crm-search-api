@@ -24,7 +24,7 @@ function initServer() {
     addMiddlewares(server);
     router(server);
 
-    server.listen(80, function () {
+    server.listen(8080, function () {
         console.log("Servidor online!");
     });
 }
