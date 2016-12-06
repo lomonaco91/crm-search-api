@@ -8,7 +8,7 @@ module.exports = {
         if (params.crm) {
             query += ' where medico.crm like \'%' + params.crm + '%\'';
         }
-        db.getConnection().query(query, cb);
+        db.query(query, cb);
     },
     
     //Método para salvar o médico, se CRM único (executa insert), se CRM duplicado (executa update)
@@ -18,18 +18,18 @@ module.exports = {
             '\', \'' + doctor.especialidade + '\') on duplicate key update ' +
             'nome = \'' + doctor.nome + '\', estado = \'' + doctor.estado + '\', ' +
             'especialidade = \'' + doctor.especialidade + '\'';
-        db.getConnection().query(query, cb);
+        db.query(query, cb);
     },
 
     updateDoctors: function (doctor, cb) {
         var query = 'update from set..... where crm = ' + doctor.crm;
-        db.getConnection().query(query, cb);
+        db.query(query, cb);
     },
 
     //Deleta um médico a partir do seu CRM (já que o CRM é uma PK no banco)
     deleteDoctor: function (crm, cb) {
         var query = 'delete from medico where crm like ' + crm;
-        db.getConnection().query(query, cb);
+        db.query(query, cb);
     }
 
 };

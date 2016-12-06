@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
 });
 
 //Teste de conexão com o banco, antes de subir o servidor
-module.exports = {
+/*module.exports = {
     testConnection: function (cb) {
         connection.connect(function (err) {
             cb(err);
@@ -18,4 +18,10 @@ module.exports = {
     getConnection: function(){
         return connection;
     }
-};
+};*/
+
+connection.connect(function(err){
+    if (err) throw err;
+});
+
+module.exports = connection;
