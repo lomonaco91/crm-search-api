@@ -25,7 +25,16 @@ function searchDoctorsByCrm() {
                 }
                 tdDelete.innerHTML = 'Remover';
                 tdDelete.onclick = function() {
-                    if (confirm('Tem certeza que deseja remover ' + doctor.nome + '?')) {
+                    swal({
+                        title: "Are you sure?",
+                        text: 'Tem certeza que deseja remover ' + doctor.nome + '?',
+                        type: "warning",
+                        showCancelButton: true,
+                        confirmButtonColor: "#DD6B55",
+                        confirmButtonText: "Yes, delete it!",
+                        closeOnConfirm: false
+                    },
+                    function () {
                         jQuery.ajax({
                             url: '/doctors/' + doctor.crm,
                             type: 'DELETE',
@@ -35,10 +44,12 @@ function searchDoctorsByCrm() {
                                 },
                                 200: function() {
                                     searchDoctorsByCrm();
+                                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
                                 }
                             }
                         });
-                    }
+                    });
+
                 }
                 tr.appendChild(tdCRM);
                 tr.appendChild(tdName);
@@ -55,6 +66,7 @@ function searchDoctorsByCrm() {
 }
 
 function checkValidCrm(crm) {
+    console.log(crm);
     var valid = true;
     for (var i = 0; i < crm.length; i++) {
         if (isNaN(parseFloat(crm.charAt(i)))) {

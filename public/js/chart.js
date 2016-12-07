@@ -2,6 +2,7 @@
 
     jQuery.ajax('/doctors').done(function (response) {
         var dataArray = createDataArray(response);
+        console.log(dataArray);
         google.charts.load('current', { 'packages': ['bar'] });
         google.charts.setOnLoadCallback(drawChart);
         function drawChart() {
