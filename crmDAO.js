@@ -3,10 +3,10 @@ var db = require('./connection');
 module.exports = {
 
     //GETDOCTORS - Busca os médicos filtrando por crm
-    getDoctors: function (params, cb) {
+    getDoctors: function (crm, cb) {
         var query = 'select * from medico';
-        if (params.crm) {
-            query += ' where medico.crm like \'%' + params.crm + '%\'';
+        if (crm) {
+            query += ' where medico.crm like \'%' + crm + '%\'';
         }
         db.query(query, cb);
     },

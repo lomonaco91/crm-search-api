@@ -4,7 +4,8 @@ var crmDAO = require('./crmDAO');
 module.exports = {
     getDoctors: function (request, response, next) {
         //Acesso ao banco
-        crmDAO.getDoctors(request.params, function (err, rows) {
+        var crm = request.params.crm != null ? request.params.crm : '';
+        crmDAO.getDoctors(crm, function (err, rows) {
             if (err) {
                 response.status(501);
             } else {
@@ -43,9 +44,9 @@ module.exports = {
         if (request.params.crm) {
             crmDAO.deleteDoctor(request.params.crm, function (err, rows) {
                 if (err) {
-                    response.send(500);
+                    response.status(500).json(err);
                 } else {
-                    response.send(200);
+                    response.status(200).json(rows);
                 }
                 next();
             });
