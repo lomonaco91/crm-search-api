@@ -10,7 +10,7 @@
             var options = {
                 chart: {
                     title: 'Relação de Número de Médicos por Estado',
-                    subtitle: 'O gráfico representa o número de médicos cadastrados de cada estado da região Sudeste',
+                    subtitle: 'O gráfico representa o número de médicos cadastrados de cada estado da região do Brasil',
                 }
             };
 

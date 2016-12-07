@@ -21,10 +21,10 @@ module.exports = {
         db.query(query, cb);
     },
 
-    updateDoctors: function (doctor, cb) {
+    /*updateDoctors: function (doctor, cb) {
         var query = 'update from set..... where crm = ' + doctor.crm;
         db.query(query, cb);
-    },
+    },*/
 
     //Deleta um médico a partir do seu CRM (já que o CRM é uma PK no banco)
     deleteDoctor: function (crm, cb) {

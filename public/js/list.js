@@ -50,7 +50,7 @@ function searchDoctorsByCrm() {
             });
         });
     } else {
-        alert('CRM inválido.');
+        alert('CRM inválido!');
     }
 }
 
