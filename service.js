@@ -22,7 +22,7 @@ module.exports = {
             if (err) {
                 response.status(500).json(err);
             } else {
-                response.send(200);
+                response.sendStatus(200);
             }
             next();
         });

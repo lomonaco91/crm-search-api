@@ -26,12 +26,12 @@ function searchDoctorsByCrm() {
                 tdDelete.innerHTML = 'Remover';
                 tdDelete.onclick = function() {
                     swal({
-                        title: "Are you sure?",
+                        title: "Você tem certeza?",
                         text: 'Tem certeza que deseja remover ' + doctor.nome + '?',
                         type: "warning",
                         showCancelButton: true,
                         confirmButtonColor: "#DD6B55",
-                        confirmButtonText: "Yes, delete it!",
+                        confirmButtonText: "SIM! Deletar",
                         closeOnConfirm: false
                     },
                     function () {
@@ -44,7 +44,7 @@ function searchDoctorsByCrm() {
                                 },
                                 200: function() {
                                     searchDoctorsByCrm();
-                                    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                                    swal("Deletado!", "O cadastro foi deletado com sucesso!", "success");
                                 }
                             }
                         });
@@ -61,7 +61,7 @@ function searchDoctorsByCrm() {
             });
         });
     } else {
-        alert('CRM inválido!');
+        swal("Ops!", "CRM Inváliado!", "error");
     }
 }
 
